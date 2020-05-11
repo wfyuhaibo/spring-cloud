@@ -1,0 +1,31 @@
+server:
+  port: 9014
+
+spring:
+  profiles:
+    active: dev #指定环境
+  application:
+    name: demo
+
+#将服务注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+
+#（包含所有端点的信息）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+      health:
+        show-details: always
+
+swagger2:
+  base:
+    package: com.yhb.demo.controller
+  group:
+    name: demo

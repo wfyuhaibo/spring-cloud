@@ -1,0 +1,40 @@
+ribbon:
+  ConnectTimeout: 25000
+  ReadTimeout: 25000
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:9002/auth/oauth/token
+      id: web
+      user-authorization-uri: http://localhost:9002/auth/oauth/authorize
+    resource:
+      prefer-token-info: false
+      user-info-uri: http://localhost:9002/auth/api/user
+
+white:
+  ips:
+    list: 127.0.0.1,0:0:0:0:0:0:0:1
+
+zuul:
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+  ignoredServices: '*'
+  retryable: false
+  routes:
+    cloud-auth:
+      path: /auth/**
+      serviceId: auth
+      sensitiveHeaders: "*"
+    demo:
+      path: /demo/**
+      serviceId: demo
+      sensitiveHeaders: "*"
+    job-admin:
+      path: /job-admin/**
+      serviceId: job-admin
+      sensitiveHeaders: "*"
+
+

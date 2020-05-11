@@ -1,0 +1,24 @@
+server:
+  port: 9002
+#配置服务名称
+spring:
+  profiles:
+    active: dev #指定环境
+  application:
+    name: gateway
+
+#将服务注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+#（包含所有端点的信息）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+      health:
+        show-details: always

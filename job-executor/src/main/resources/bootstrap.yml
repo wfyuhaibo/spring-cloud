@@ -1,0 +1,27 @@
+server:
+  port: 9005
+spring:
+  profiles:
+    active: dev #指定环境
+  application:
+    name: job-executor
+
+#将服务注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+# log config
+logging:
+  config: classpath:logback.xml
+
+# 注册到Admin 健康数据
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

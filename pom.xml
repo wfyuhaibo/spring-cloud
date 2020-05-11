@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.yhb</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>spring-cloud</name>
+    <description>Demo project for Spring Cloud</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <druid.version>1.1.9</druid.version>
+        <mysql.version>5.1.47</mysql.version>
+        <mybatis.plus.version>3.1.2</mybatis.plus.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <guava.version>20.0</guava.version>
+        <spring-boot-admin.version>2.0.3</spring-boot-admin.version>
+        <lombok.version>1.18.8</lombok.version>
+        <commons.pool2.version>2.0</commons.pool2.version>
+        <xxl-job-core.version>2.2.0</xxl-job-core.version>
+    </properties>
+
+    <!-- 引入 spring-cloud模块 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
+
+
+    <modules>
+        <!-- 服务注册发现 -->
+        <module>eureka</module>
+        <!-- 统一网关中心 -->
+        <module>gateway</module>
+        <!-- 统一认证和鉴权中心 -->
+        <module>auth</module>
+        <!-- pms工具包 -->
+        <module>commons</module>
+        <!-- 业务服务 -->
+        <module>modules</module>
+        <!-- 服务治理 -->
+        <module>support</module>
+        <!-- 任务执行器 -->
+        <module>job-executor</module>
+
+
+    </modules>
+
+</project>
