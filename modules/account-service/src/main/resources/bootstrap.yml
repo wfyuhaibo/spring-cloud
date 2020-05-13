@@ -1,0 +1,12 @@
+server:
+  port: 9101
+
+spring:
+  profiles:
+    active: dev #指定环境
+  application:
+    name: account-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group

@@ -1,18 +1,16 @@
-package com.yhb.demo;
+package com.yhb.account;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableSwagger2
 @SpringBootApplication
 @EnableDiscoveryClient
-public class DemoApplication {
+@EnableFeignClients
+public class AccountApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(AccountApplication.class, args);
     }
-
 }

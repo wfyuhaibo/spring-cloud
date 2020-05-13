@@ -22,7 +22,12 @@
     </dependencies>
 
     <modules>
-        <module>demo</module>
+        <!--从用户帐户中扣除余额-->
+        <module>account-service</module>
+        <!--根据采购需求创建订单-->
+        <module>order-service</module>
+        <!--对给定的商品扣除仓储数量-->
+        <module>storage-service</module>
     </modules>
 
 </project>
