@@ -7,21 +7,32 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Data
-@TableName("account")
+@TableName("storage")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Account implements Serializable {
+public class Storage implements Serializable {
 
     @TableId(type = IdType.AUTO, value = "id")
-    private Integer id;
+    private Long id;
 
-    private String userId;
+    /**
+     * 产品id
+     */
+    private Long productId;
 
-    private BigDecimal total;
+    /**
+     * 总库存
+     */
+    private Integer total;
 
-    private BigDecimal used;
+    /**
+     * 已用库存
+     */
+    private Integer used;
 
-    private BigDecimal residue;
+    /**
+     * 剩余库存
+     */
+    private Integer residue;
 }

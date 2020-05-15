@@ -9,6 +9,7 @@ spring:
   cloud:
     alibaba:
       seata:
+        #自定义事务组名称需要与seata-server中的对应
         tx-service-group: my_test_tx_group
 
 #将服务注册到注册中心

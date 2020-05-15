@@ -10,10 +10,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableFeignClients
-@MapperScan("com.yhb.account.mapper")
-public class AccountApplication {
+@MapperScan("com.yhb.storage.mapper")
+public class StorageApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class, args);
+        SpringApplication.run(StorageApplication.class, args);
     }
 }

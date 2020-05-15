@@ -24,13 +24,21 @@ zuul:
   ignoredServices: '*'
   retryable: false
   routes:
-    cloud-auth:
+    auth:
       path: /auth/**
       serviceId: auth
       sensitiveHeaders: "*"
-    demo:
-      path: /demo/**
-      serviceId: demo
+    account-service:
+      path: /account/**
+      serviceId: account-service
+      sensitiveHeaders: "*"
+    order-service:
+      path: /order/**
+      serviceId: order-service
+      sensitiveHeaders: "*"
+    storage-service:
+      path: /storage/**
+      serviceId: storage-service
       sensitiveHeaders: "*"
     job-admin:
       path: /job-admin/**

@@ -10,18 +10,23 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
-@TableName("account")
+@TableName("order")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Account implements Serializable {
+public class Order implements Serializable {
 
     @TableId(type = IdType.AUTO, value = "id")
-    private Integer id;
+    private Long id;
 
-    private String userId;
+    private Long userId;
 
-    private BigDecimal total;
+    private Long productId;
 
-    private BigDecimal used;
+    private Integer count;
 
-    private BigDecimal residue;
+    private BigDecimal money;
+
+    /**
+     * 订单状态：0：创建中；1：已完结
+     */
+    private Integer status;
 }

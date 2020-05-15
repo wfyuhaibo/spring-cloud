@@ -1,14 +1,15 @@
 server:
-  port: 9101
+  port: 9103
 
 spring:
   profiles:
     active: dev #指定环境
   application:
-    name: account-service
+    name: storage-service
   cloud:
     alibaba:
       seata:
+        #自定义事务组名称需要与seata-server中的对应
         tx-service-group: my_test_tx_group
 
 #将服务注册到注册中心
@@ -24,6 +25,6 @@ logging:
 
 swagger2:
   base:
-    package: com.yhb.account.controller
+    package: com.yhb.storage.controller
   group:
-    name: account服务
+    name: storage服务

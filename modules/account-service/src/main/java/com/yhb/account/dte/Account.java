@@ -15,13 +15,25 @@ import java.math.BigDecimal;
 public class Account implements Serializable {
 
     @TableId(type = IdType.AUTO, value = "id")
-    private Integer id;
+    private Long id;
 
-    private String userId;
+    /**
+     * 用户id
+     */
+    private Long userId;
 
+    /**
+     * 总额度
+     */
     private BigDecimal total;
 
+    /**
+     * 已用额度
+     */
     private BigDecimal used;
 
+    /**
+     * 剩余额度
+     */
     private BigDecimal residue;
 }
