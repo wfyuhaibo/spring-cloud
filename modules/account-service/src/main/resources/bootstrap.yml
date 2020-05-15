@@ -10,3 +10,20 @@ spring:
     alibaba:
       seata:
         tx-service-group: my_test_tx_group
+
+#将服务注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+logging:
+  level:
+    io:
+      seata: debug
+
+swagger2:
+  base:
+    package: com.yhb.account.controller
+  group:
+    name: account服务

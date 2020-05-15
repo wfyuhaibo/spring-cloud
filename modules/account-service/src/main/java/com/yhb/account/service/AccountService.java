@@ -2,10 +2,16 @@ package com.yhb.account.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yhb.account.dte.Account;
-import org.apache.ibatis.annotations.Param;
+
+import java.math.BigDecimal;
 
 public interface AccountService extends IService<Account> {
 
-    void decreate(@Param("money") Integer money, @Param("userId") String userId);
+    /**
+     * 扣减账户余额
+     * @param userId 用户id
+     * @param money 金额
+     */
+    void decrease(Long userId, BigDecimal money);
 
 }

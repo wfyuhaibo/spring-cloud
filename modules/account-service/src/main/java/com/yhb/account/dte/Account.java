@@ -7,9 +7,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
-@TableName("t_account")
+@TableName("account")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Account implements Serializable {
 
@@ -18,6 +19,9 @@ public class Account implements Serializable {
 
     private String userId;
 
-    private Integer money;
+    private BigDecimal total;
 
+    private BigDecimal used;
+
+    private BigDecimal residue;
 }

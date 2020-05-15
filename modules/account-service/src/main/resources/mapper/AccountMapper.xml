@@ -3,4 +3,7 @@
 
 <mapper namespace="com.yhb.account.mapper.AccountMapper">
 
+    <update id="decrease">
+    UPDATE account SET residue = residue - #{money},used = used + #{money} where user_id = #{userId};
+  </update>
 </mapper>

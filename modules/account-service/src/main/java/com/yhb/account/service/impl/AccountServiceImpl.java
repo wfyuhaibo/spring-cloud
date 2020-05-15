@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+
 @Slf4j
 @Service
 public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements AccountService {
@@ -18,8 +20,21 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
 
     @Transactional
     @Override
-    public void decreate(Integer money, String userId) {
-        accountMapper.decreate(money, userId);
+    public void decrease(Long userId, BigDecimal money) {
+        log.info("------->扣减账户开始account中");
+        //模拟超时异常，全局事务回滚
+//        try {
+//            Thread.sleep(30*1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        accountMapper.decrease(userId,money);
+        log.info("------->扣减账户结束account中");
+
+        //修改订单状态，此调用会导致调用成环
+        log.info("修改订单状态开始");
+        //String mes = orderApi.update(userId, money.multiply(new BigDecimal("0.09")),0);
+        //log.info("修改订单状态结束：{}",mes);
     }
 
 }
