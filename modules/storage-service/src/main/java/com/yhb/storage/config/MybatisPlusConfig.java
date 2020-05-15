@@ -1,4 +1,4 @@
-package com.yhb.account.config;
+package com.yhb.storage.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
