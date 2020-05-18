@@ -21,18 +21,18 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
     @Transactional
     @Override
     public void decrease(Long userId, BigDecimal money) {
-        log.info("------->扣减账户开始account中");
+        log.info("------->account-service中扣减账户余额开始");
         //模拟超时异常，全局事务回滚
-//        try {
-//            Thread.sleep(30*1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(30*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         accountMapper.decrease(userId,money);
-        log.info("------->扣减账户结束account中");
+        log.info("------->account-service中扣减账户余额结束");
 
         //修改订单状态，此调用会导致调用成环
-        log.info("修改订单状态开始");
+        //log.info("修改订单状态开始");
         //String mes = orderApi.update(userId, money.multiply(new BigDecimal("0.09")),0);
         //log.info("修改订单状态结束：{}",mes);
     }

@@ -30,3 +30,12 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+#权限
+security:
+  oauth2:
+    resource:
+      id: order-service
+      user-info-uri: http://localhost:9002/auth/api/user
+      prefer-token-info: false
+

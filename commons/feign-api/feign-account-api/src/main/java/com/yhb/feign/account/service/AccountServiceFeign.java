@@ -1,6 +1,7 @@
 package com.yhb.feign.account.service;
 
 import com.yhb.common.base.Result;
+import com.yhb.feign.account.config.FeignConfig;
 import com.yhb.feign.account.fallback.AccountServiceFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "account-service", fallbackFactory = AccountServiceFallbackFactory.class)
+@FeignClient(value = "account-service", fallbackFactory = AccountServiceFallbackFactory.class,configuration = FeignConfig.class)
 public interface AccountServiceFeign {
 
     /**

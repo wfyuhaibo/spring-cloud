@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.yhb.feign.account","com.yhb.feign.storage"})
 @MapperScan("com.yhb.order.mapper")
 public class OrderApplication {
 

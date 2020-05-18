@@ -31,4 +31,9 @@ public class OrderController {
         return Result.success(orderService.page(new Page<>(current, size)));
     }
 
+    @GetMapping(value = "/hello")
+    public Object hello() {
+        String hello = "hello";
+        return Result.success(hello);
+    }
 }
