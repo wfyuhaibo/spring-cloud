@@ -1,5 +1,7 @@
 server:
-  port: 9004
+  port: 9201
+  servlet:
+      context-path: /job-admin
 
 spring:
   profiles:
