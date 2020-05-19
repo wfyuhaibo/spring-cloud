@@ -1,5 +1,5 @@
-package com.yhb.job.executor.controller;//package com.xxl.job.executor.mvc.controller;
-//
+package com.yhb.job.executor.controller;
+
 //import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.RequestMapping;
