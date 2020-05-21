@@ -1,0 +1,37 @@
+server:
+  port: 9202
+
+spring:
+  profiles:
+    active: dev #指定环境
+  application:
+    name: admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+
+#将服务注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+#（包含所有端点的信息）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    mail:
+      enabled: false

@@ -14,4 +14,6 @@ public interface AccountService extends IService<Account> {
      */
     void decrease(Long userId, BigDecimal money);
 
+    BigDecimal residue(Long userId);
+
 }

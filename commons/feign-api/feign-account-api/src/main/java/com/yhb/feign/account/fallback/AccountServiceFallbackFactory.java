@@ -20,6 +20,11 @@ public class AccountServiceFallbackFactory implements FallbackFactory<AccountSer
             public Result decrease(Long userId, BigDecimal money) {
                 return null;
             }
+
+            @Override
+            public Result residue(Long userId) {
+                return null;
+            }
         };
     }
 }

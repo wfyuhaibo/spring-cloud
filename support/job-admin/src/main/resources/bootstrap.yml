@@ -8,6 +8,10 @@ spring:
     active: dev #指定环境
   application:
     name: job-admin
+  boot:
+    admin:
+      client:
+        url: http://localhost:9202 # 注册到Admin
   freemarker:
     charset: UTF-8
     request-context-attribute: request

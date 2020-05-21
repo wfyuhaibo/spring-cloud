@@ -79,12 +79,6 @@ public enum BaseException {
     //参数异常
     PARAM_EXCEPTION(10008, "参数异常"),
 
-    //调用大华接口错误OR超时
-    DAHUA_JIEKOU_EXCEPTION(10009, "调用大华接口错误OR超时"),
-
-    //调用大华错误返回信息
-    DAHUA_ERROR_EXCEPTION(10010, "调用大华错误返回信息"),
-
     ;
 
     private int code;

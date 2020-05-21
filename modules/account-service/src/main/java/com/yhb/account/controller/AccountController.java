@@ -28,4 +28,15 @@ public class AccountController {
         return Result.success();
     }
 
+    /**
+     * 获取账户剩余可用额度
+     * @param userId 用户id
+     * @return
+     */
+    @GetMapping("residue")
+    public Result residue(@RequestParam("userId") Long userId){
+        BigDecimal residue = accountService.residue(userId);
+        return Result.success(residue);
+    }
+
 }

@@ -30,6 +30,7 @@
         <lombok.version>1.18.8</lombok.version>
         <commons.pool2.version>2.0</commons.pool2.version>
         <xxl-job-core.version>2.2.0</xxl-job-core.version>
+        <spring-boot-admin.version>2.0.3</spring-boot-admin.version>
     </properties>
 
     <!-- 引入 spring-cloud模块 -->

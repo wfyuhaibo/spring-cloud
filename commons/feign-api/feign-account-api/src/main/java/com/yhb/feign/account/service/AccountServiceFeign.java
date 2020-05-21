@@ -17,4 +17,10 @@ public interface AccountServiceFeign {
      */
     @GetMapping("/api/account/decrease")
     Result decrease(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money);
+
+    /**
+     * 获取账户剩余可用额度
+     */
+    @GetMapping("/api/account/residue")
+    Result residue(@RequestParam("userId") Long userId);
 }

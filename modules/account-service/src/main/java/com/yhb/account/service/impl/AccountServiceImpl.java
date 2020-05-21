@@ -37,4 +37,10 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> impl
         //log.info("修改订单状态结束：{}",mes);
     }
 
+    @Override
+    public BigDecimal residue(Long userId) {
+
+        return accountMapper.selectById(userId).getResidue();
+    }
+
 }
