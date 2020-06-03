@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/wfyuhaibo/config.git
+          search-paths: configPath
+          username: wfyuhaibo
+          password: Yy1682410
+  kafka:
+    bootstrap-servers: localhost:9092
+
+
