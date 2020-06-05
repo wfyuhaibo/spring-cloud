@@ -2,10 +2,10 @@ spring:
   application:
     name: eureka
 
-  security:
-    user:
-      name: user                # 配置登录的账号是user
-      password: 123456     # 配置登录的密码是123456
+#  security:
+#    user:
+#      name: user                # 配置登录的账号是user
+#      password: 123456     # 配置登录的密码是123456
 
 
 server:
@@ -23,7 +23,7 @@ eureka:
     fetch-registry: false
     #服务注册中心的配置内容，指定服务注册中心的位置
     service-url:
-      defaultZone: http://user:123456@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
   #——————————————添加健康检查配置——————————————
   # 该配置可以移除这种自我保护机制，防止失效的服务也被一直访问 (Spring Cloud默认该配置是 true)

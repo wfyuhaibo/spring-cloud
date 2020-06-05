@@ -6,10 +6,18 @@ spring:
     active: dev #指定环境
   application:
     name: gateway
-  boot:
-    admin:
-      client:
-        url: http://localhost:9202 # 注册到Admin
+#  boot:
+#    admin:
+#      client:
+ #       url: http://localhost:9202 # 注册到Admin
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      label: master
+      name: gateway
+      profile: dev
 
 #将服务注册到注册中心
 eureka:
